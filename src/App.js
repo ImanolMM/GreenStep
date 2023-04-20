@@ -4,6 +4,7 @@ import 'firebase/compat/auth';
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import {useEffect, useState} from "react";
+import "./app.css"
 
 firebase.initializeApp({
   apiKey: "AIzaSyAp598ZuAB8v2rOsE2wl_7AkNmpAdFKyKk",
@@ -61,33 +62,34 @@ console.log(datos);
   return (
     <div>
       <header>
-        <h1>Chap</h1>
-
+          <div>
+              <h1  className="title">Chap</h1>
+          </div>
         </header>
-        <section>
-            {user ? <ChatRoom /> : <SignIn />}
-            <SignOut />
+        <section className="container">
+            {user ? <ChatRoom /> : <SignIn style="button" />}
+            <SignOut style="button"/>
             <img src={imagen} alt="imagen" />
-            <button onClick={() => setContador(contador + 1)}>Contador</button>
+            <button className="button" onClick={() => setContador(contador + 1)}>Contador</button>
         </section>
     </div>
   );
 }
 
 function ChatRoom() {}
-function SignIn() {
+function SignIn({style}) {
 const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
   }
   return (
-    <button onClick={signInWithGoogle}>Sign in with Google</button>
+    <button className={style ? style : ""} onClick={signInWithGoogle}>Sign in with Google</button>
   )
 }
 
-function SignOut() {
+function SignOut({ style }) {
   return auth.currentUser && (
-    <button onClick={() => auth.signOut()}>Sign Out</button>
+    <button className={style ? style : ""} onClick={() => auth.signOut()}>Sign Out</button>
   )
 }
 
