@@ -7,12 +7,12 @@ import {useEffect, useState} from "react";
 import "./app.css"
 
 firebase.initializeApp({
-  apiKey: "AIzaSyAp598ZuAB8v2rOsE2wl_7AkNmpAdFKyKk",
-  authDomain: "prueba-d528d.firebaseapp.com",
-  projectId: "prueba-d528d",
-  storageBucket: "prueba-d528d.appspot.com",
-  messagingSenderId: "715965267025",
-  appId: "1:715965267025:web:dc0c72a222d34e57f0cc70"
+    apiKey: "AIzaSyCrhi8K1XQVuzVX0jTiF3xXG-Jo-YYQVYw",
+    authDomain: "greenstep-72aa5.firebaseapp.com",
+    projectId: "greenstep-72aa5",
+    storageBucket: "greenstep-72aa5.appspot.com",
+    messagingSenderId: "824927867442",
+    appId: "1:824927867442:web:bbb82a4f759b383b1aa22b"
 })
 
 const firestore = firebase.firestore();
